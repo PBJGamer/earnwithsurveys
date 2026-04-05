@@ -18,7 +18,7 @@ body {
 /* HERO */
 .hero {
   text-align: center;
-  padding: 80px 20px 40px;
+  padding: 80px 20px 50px;
   animation: fadeIn 1s ease;
 }
 
@@ -33,10 +33,10 @@ body {
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 58px;
   font-weight: 700;
   margin: 0;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .highlight {
@@ -47,27 +47,55 @@ h1 {
   color: #94a3b8;
   font-size: 18px;
   margin-top: 15px;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* BUTTON */
+/* CTA BUTTON (UPGRADED) */
 .cta-button {
   display: inline-block;
-  background: #facc15;
+  background: linear-gradient(135deg, #fde047, #facc15);
   color: black;
-  padding: 16px 36px;
-  border-radius: 10px;
-  font-weight: 600;
+  padding: 18px 42px;
+  border-radius: 12px;
+  font-weight: 700;
   text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 0.3px;
+  position: relative;
   transition: all 0.25s ease;
+  box-shadow: 0 10px 30px rgba(250,204,21,0.35);
+}
+
+/* subtle glow pulse */
+.cta-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: rgba(250,204,21,0.25);
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .cta-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(250,204,21,0.4);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 15px 40px rgba(250,204,21,0.5);
 }
 
-/* MAIN SECTION */
+.cta-button:hover::after {
+  opacity: 1;
+}
+
+.cta-note {
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 12px;
+}
+
+/* MAIN */
 .main {
   display: flex;
   justify-content: center;
@@ -77,7 +105,7 @@ h1 {
   flex-wrap: wrap;
 }
 
-/* LEFT INFO */
+/* INFO */
 .info {
   max-width: 420px;
   animation: fadeInUp 1s ease;
@@ -85,13 +113,14 @@ h1 {
 
 .info h2 {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .info p {
   color: #94a3b8;
   font-size: 15px;
   line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 /* MOCKUP */
@@ -101,7 +130,7 @@ h1 {
   border-radius: 18px;
   padding: 20px;
   border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.7);
   animation: fadeInUp 1s ease;
 }
 
@@ -145,7 +174,7 @@ h1 {
   text-align: center;
   font-size: 13px;
   color: #64748b;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* ANIMATIONS */
@@ -162,7 +191,7 @@ h1 {
 /* MOBILE */
 @media (max-width: 768px) {
   h1 {
-    font-size: 36px;
+    font-size: 38px;
   }
 
   .main {
@@ -198,30 +227,30 @@ h1 {
   <a class="cta-button" href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
     Start Earning
   </a>
+
+  <div class="cta-note">Takes less than 1 minute to get started</div>
 </div>
 
 <!-- MAIN -->
 <div class="main">
 
-  <!-- INFO -->
   <div class="info">
     <h2>How it works</h2>
     <p>
-      Sign up for free, answer short surveys, and earn rewards. You can cash out whenever you want.
+      Sign up for free, answer short surveys, and earn rewards. Cash out whenever you want.
     </p>
 
     <h2>My experience</h2>
     <p>
-      I’ve tried a few survey platforms, and most aren’t worth the time. This one has been more consistent for small, easy earnings.
+      I’ve tried a few survey platforms — most aren’t worth it. This one has been more consistent for small, easy earnings.
     </p>
 
     <h2>What to expect</h2>
     <p>
-      It’s not a full income, but it’s a simple way to earn a bit extra without needing any skills.
+      It’s not a full income, but it’s a simple way to earn extra money without needing any skills.
     </p>
   </div>
 
-  <!-- MOCKUP -->
   <div class="mockup">
 
     <div class="mock-top">
