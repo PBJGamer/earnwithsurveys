@@ -11,89 +11,114 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0B0F2B, #000000);
+  background: radial-gradient(circle at top, #1a1f4d, #05060f);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
 }
 
 /* Main Card */
 .container {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 40px 30px;
-  border-radius: 16px;
-  width: 90%;
-  max-width: 500px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  padding: 50px 30px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 520px;
   text-align: center;
-  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  box-shadow: 0 0 60px rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  background: linear-gradient(45deg, #00c853, #00e676);
+  color: black;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 18px;
 }
 
 /* Headline */
 h1 {
-  font-size: 32px;
+  font-size: 36px;
   color: #FFD700;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  line-height: 1.2;
 }
 
 /* Subtext */
 p {
-  font-size: 16px;
-  color: #ccc;
-  margin-bottom: 25px;
+  font-size: 17px;
+  color: #d0d0d0;
+  margin-bottom: 30px;
 }
 
 /* Benefits */
 .benefits {
   text-align: left;
-  margin: 20px 0 30px 0;
-  font-size: 15px;
-  line-height: 1.8;
+  margin: 25px 0 35px 0;
+  font-size: 16px;
+  line-height: 2;
 }
 
 /* CTA Button */
 .cta-button {
   display: inline-block;
-  background: linear-gradient(45deg, #FFD700, #ffcc00);
+  background: linear-gradient(45deg, #FFD700, #ffb300);
   color: black;
-  font-size: 18px;
-  padding: 15px 30px;
-  border-radius: 10px;
+  font-size: 20px;
+  padding: 18px 35px;
+  border-radius: 12px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   transition: all 0.25s ease;
-  box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 8px 30px rgba(255, 200, 0, 0.5);
 }
 
-/* Hover animation */
+/* Hover */
 .cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.7);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 12px 40px rgba(255, 200, 0, 0.8);
 }
 
-/* Click effect */
+/* Click */
 .cta-button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
-/* Trust text */
+/* Trust */
 .trust {
-  margin-top: 20px;
-  font-size: 13px;
-  color: #aaa;
+  margin-top: 25px;
+  font-size: 14px;
+  color: #9aa0b5;
 }
 
-/* Small badge */
-.badge {
-  display: inline-block;
-  background: #1f8f4f;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  margin-bottom: 15px;
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  .container {
+    padding: 40px 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 18px;
+    font-size: 18px;
+  }
 }
 </style>
 </head>
@@ -102,17 +127,17 @@ p {
 
 <div class="container">
 
-  <div class="badge">✔ Legit & Free</div>
+  <div class="badge">✔ 100% Free • No Experience Needed</div>
 
   <h1>💰 Get Paid For Answering Surveys</h1>
   
-  <p>Earn real money online in your spare time — no experience needed.</p>
+  <p>Make extra money in your spare time — simple, quick, and beginner-friendly.</p>
 
   <div class="benefits">
     ✔ Free to join<br>
     ✔ No skills required<br>
     ✔ Works worldwide<br>
-    ✔ Quick & easy payouts
+    ✔ Fast & easy payouts
   </div>
 
   <a class="cta-button" href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
@@ -120,7 +145,7 @@ p {
   </a>
 
   <div class="trust">
-    Used by thousands of people worldwide
+    Join thousands of users already earning online
   </div>
 
 </div>
