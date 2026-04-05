@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Get Paid For Surveys</title>
+<title>Simple Survey Earnings</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -11,39 +11,32 @@
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at top, #0f172a, #020617);
+  background: #020617;
   color: white;
 }
 
-/* LAYOUT */
-.wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 60px;
-  gap: 60px;
-}
-
-/* LEFT */
-.left {
-  max-width: 500px;
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+  animation: fadeIn 1s ease;
 }
 
 .badge {
-  background: rgba(34,197,94,0.15);
+  display: inline-block;
+  background: rgba(34,197,94,0.1);
   color: #22c55e;
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: 999px;
   font-size: 13px;
-  display: inline-block;
   margin-bottom: 20px;
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 56px;
+  font-weight: 700;
+  margin: 0;
   line-height: 1.2;
-  margin-bottom: 15px;
 }
 
 .highlight {
@@ -53,6 +46,7 @@ h1 {
 .subtext {
   color: #94a3b8;
   font-size: 18px;
+  margin-top: 15px;
   margin-bottom: 30px;
 }
 
@@ -61,77 +55,118 @@ h1 {
   display: inline-block;
   background: #facc15;
   color: black;
-  padding: 16px 32px;
+  padding: 16px 36px;
   border-radius: 10px;
   font-weight: 600;
   text-decoration: none;
-  transition: 0.25s;
+  transition: all 0.25s ease;
 }
 
 .cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(250,204,21,0.4);
+  box-shadow: 0 10px 25px rgba(250,204,21,0.4);
 }
 
-/* RIGHT MOCKUP */
+/* MAIN SECTION */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 40px 20px 80px;
+  flex-wrap: wrap;
+}
+
+/* LEFT INFO */
+.info {
+  max-width: 420px;
+  animation: fadeInUp 1s ease;
+}
+
+.info h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.info p {
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* MOCKUP */
 .mockup {
   width: 420px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
+  background: #0f172a;
+  border-radius: 18px;
   padding: 20px;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  animation: fadeInUp 1s ease;
 }
 
 /* MOCK HEADER */
-.mock-header {
+.mock-top {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.mock-box {
-  background: rgba(255,255,255,0.06);
-  padding: 15px;
-  border-radius: 10px;
   margin-bottom: 15px;
 }
 
-.mock-title {
-  font-size: 14px;
-  color: #94a3b8;
+.stat {
+  background: #020617;
+  padding: 12px;
+  border-radius: 10px;
+  width: 48%;
 }
 
-.mock-value {
-  font-size: 22px;
+.stat-title {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.stat-value {
+  font-size: 20px;
   font-weight: 600;
 }
 
-/* SURVEY LIST */
+/* SURVEYS */
 .survey {
-  background: rgba(255,255,255,0.04);
+  background: #020617;
   padding: 12px;
   border-radius: 8px;
   margin-top: 10px;
   font-size: 14px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* TRUST */
 .trust {
-  margin-top: 20px;
+  text-align: center;
   font-size: 13px;
   color: #64748b;
+  margin-top: 20px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+@keyframes fadeInUp {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
 }
 
 /* MOBILE */
-@media (max-width: 900px) {
-  .wrapper {
-    flex-direction: column;
-    padding: 30px 20px;
+@media (max-width: 768px) {
+  h1 {
+    font-size: 36px;
   }
 
-  h1 {
-    font-size: 34px;
+  .main {
+    flex-direction: column;
   }
 
   .mockup {
@@ -148,61 +183,80 @@ h1 {
 
 <body>
 
-<div class="wrapper">
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">Free • No experience needed</div>
 
-  <!-- LEFT -->
-  <div class="left">
-    <div class="badge">Free • No experience needed</div>
+  <h1>
+    Get Paid For <span class="highlight">Simple Surveys</span>
+  </h1>
 
-    <h1>
-      💰 Get Paid For <span class="highlight">Surveys</span>
-    </h1>
-
-    <div class="subtext">
-      A simple, beginner-friendly way to earn extra money in your spare time.
-    </div>
-
-    <a class="cta-button" href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
-      👉 Start Earning Now
-    </a>
-
-    <div class="trust">
-      Free signup • Works worldwide • No payment required
-    </div>
+  <div class="subtext">
+    A straightforward way to earn a bit of extra money in your spare time.
   </div>
 
-  <!-- RIGHT MOCKUP -->
+  <a class="cta-button" href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
+    Start Earning
+  </a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+  <!-- INFO -->
+  <div class="info">
+    <h2>How it works</h2>
+    <p>
+      Sign up for free, answer short surveys, and earn rewards. You can cash out whenever you want.
+    </p>
+
+    <h2>My experience</h2>
+    <p>
+      I’ve tried a few survey platforms, and most aren’t worth the time. This one has been more consistent for small, easy earnings.
+    </p>
+
+    <h2>What to expect</h2>
+    <p>
+      It’s not a full income, but it’s a simple way to earn a bit extra without needing any skills.
+    </p>
+  </div>
+
+  <!-- MOCKUP -->
   <div class="mockup">
 
-    <div class="mock-header">
-      <div class="mock-box">
-        <div class="mock-title">Available Surveys</div>
-        <div class="mock-value">12</div>
+    <div class="mock-top">
+      <div class="stat">
+        <div class="stat-title">Available</div>
+        <div class="stat-value">12 Surveys</div>
       </div>
 
-      <div class="mock-box">
-        <div class="mock-title">Today’s Earnings</div>
-        <div class="mock-value">$4.80</div>
+      <div class="stat">
+        <div class="stat-title">Today</div>
+        <div class="stat-value">$4.80</div>
       </div>
     </div>
 
-    <div class="mock-box">
-      <div class="mock-title">Recent Surveys</div>
-
-      <div class="survey">📋 Shopping Habits — 5 min</div>
-      <div class="survey">📋 App Feedback — 3 min</div>
-      <div class="survey">📋 Daily Routine — 4 min</div>
+    <div class="survey">
+      <span>Shopping habits</span>
+      <span>5 min</span>
     </div>
 
-    <div class="mock-box">
-      <div class="mock-title">My experience</div>
-      <p style="font-size:14px; color:#94a3b8;">
-        I’ve tried multiple survey sites — this is one of the few that feels consistent for earning small amounts in spare time.
-      </p>
+    <div class="survey">
+      <span>App feedback</span>
+      <span>3 min</span>
+    </div>
+
+    <div class="survey">
+      <span>Daily routine</span>
+      <span>4 min</span>
     </div>
 
   </div>
 
+</div>
+
+<div class="trust">
+  Free signup • Works worldwide • No payment required
 </div>
 
 </body>
