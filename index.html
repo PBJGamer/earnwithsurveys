@@ -5,52 +5,95 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Get Paid For Surveys</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: linear-gradient(135deg, #0B0F2B, #000000);
   color: white;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
+/* Main Card */
 .container {
-  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 40px 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
 }
 
+/* Headline */
 h1 {
-  font-size: 40px;
+  font-size: 32px;
   color: #FFD700;
+  margin-bottom: 10px;
 }
 
+/* Subtext */
 p {
-  font-size: 18px;
-  color: #ddd;
-}
-
-.benefits {
-  margin: 30px 0;
   font-size: 16px;
+  color: #ccc;
+  margin-bottom: 25px;
 }
 
-button {
-  background: #FFD700;
+/* Benefits */
+.benefits {
+  text-align: left;
+  margin: 20px 0 30px 0;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(45deg, #FFD700, #ffcc00);
   color: black;
-  font-size: 20px;
+  font-size: 18px;
   padding: 15px 30px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-shadow: 0 5px 20px rgba(255, 215, 0, 0.4);
 }
 
-button:hover {
-  background: #ffcc00;
+/* Hover animation */
+.cta-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.7);
 }
 
+/* Click effect */
+.cta-button:active {
+  transform: scale(0.98);
+}
+
+/* Trust text */
 .trust {
   margin-top: 20px;
-  font-size: 14px;
+  font-size: 13px;
   color: #aaa;
+}
+
+/* Small badge */
+.badge {
+  display: inline-block;
+  background: #1f8f4f;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  margin-bottom: 15px;
 }
 </style>
 </head>
@@ -58,24 +101,28 @@ button:hover {
 <body>
 
 <div class="container">
+
+  <div class="badge">✔ Legit & Free</div>
+
   <h1>💰 Get Paid For Answering Surveys</h1>
   
-  <p>Earn real money online — no experience needed.</p>
+  <p>Earn real money online in your spare time — no experience needed.</p>
 
   <div class="benefits">
     ✔ Free to join<br>
     ✔ No skills required<br>
     ✔ Works worldwide<br>
-    ✔ Earn money daily
+    ✔ Quick & easy payouts
   </div>
 
-  <a href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
-    <button>👉 Start Earning Now</button>
+  <a class="cta-button" href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
+    👉 Start Earning Now
   </a>
 
   <div class="trust">
-    Trusted by thousands of users worldwide
+    Used by thousands of people worldwide
   </div>
+
 </div>
 
 </body>
