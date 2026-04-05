@@ -5,123 +5,137 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Get Paid For Surveys</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0f1226, #05060f);
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
   color: white;
 }
 
-/* MAIN LAYOUT */
+/* LAYOUT */
 .wrapper {
   display: flex;
-  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 60px;
+  gap: 60px;
 }
 
-/* LEFT SIDE */
+/* LEFT */
 .left {
-  flex: 1;
-  padding: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  max-width: 500px;
 }
 
 .badge {
-  background: #00e676;
-  color: black;
+  background: rgba(34,197,94,0.15);
+  color: #22c55e;
   padding: 6px 12px;
-  border-radius: 6px;
+  border-radius: 999px;
   font-size: 13px;
   display: inline-block;
-  width: fit-content;
   margin-bottom: 20px;
-  font-weight: 600;
 }
 
 h1 {
   font-size: 48px;
-  color: #FFD700;
+  line-height: 1.2;
   margin-bottom: 15px;
 }
 
+.highlight {
+  color: #facc15;
+}
+
 .subtext {
+  color: #94a3b8;
   font-size: 18px;
-  color: #ccc;
   margin-bottom: 30px;
 }
 
-/* CTA */
+/* BUTTON */
 .cta-button {
   display: inline-block;
-  background: linear-gradient(45deg, #FFD700, #ffb300);
+  background: #facc15;
   color: black;
-  font-size: 20px;
-  padding: 18px 40px;
+  padding: 16px 32px;
   border-radius: 10px;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: 700;
-  transition: all 0.25s ease;
-  box-shadow: 0 10px 30px rgba(255, 200, 0, 0.5);
-  width: fit-content;
+  transition: 0.25s;
 }
 
 .cta-button:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(255, 200, 0, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(250,204,21,0.4);
 }
 
-/* RIGHT SIDE */
-.right {
-  flex: 1;
-  padding: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 25px;
-}
-
-/* CARD SECTIONS */
-.card {
+/* RIGHT MOCKUP */
+.mockup {
+  width: 420px;
   background: rgba(255,255,255,0.05);
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 20px;
   border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 }
 
-.card-title {
+/* MOCK HEADER */
+.mock-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.mock-box {
+  background: rgba(255,255,255,0.06);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.mock-title {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.mock-value {
+  font-size: 22px;
   font-weight: 600;
-  margin-bottom: 10px;
 }
 
-ul {
-  padding-left: 18px;
-  line-height: 1.8;
+/* SURVEY LIST */
+.survey {
+  background: rgba(255,255,255,0.04);
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
 /* TRUST */
 .trust {
-  font-size: 13px;
-  color: #9aa0b5;
   margin-top: 20px;
+  font-size: 13px;
+  color: #64748b;
 }
 
 /* MOBILE */
 @media (max-width: 900px) {
   .wrapper {
     flex-direction: column;
-    height: auto;
-  }
-
-  .left, .right {
     padding: 30px 20px;
   }
 
   h1 {
     font-size: 34px;
+  }
+
+  .mockup {
+    width: 100%;
   }
 
   .cta-button {
@@ -136,14 +150,16 @@ ul {
 
 <div class="wrapper">
 
-  <!-- LEFT SIDE -->
+  <!-- LEFT -->
   <div class="left">
-    <div class="badge">✔ Free • No Experience Needed</div>
+    <div class="badge">Free • No experience needed</div>
 
-    <h1>💰 Get Paid For Surveys</h1>
+    <h1>
+      💰 Get Paid For <span class="highlight">Surveys</span>
+    </h1>
 
     <div class="subtext">
-      A simple way to earn extra money in your spare time.
+      A simple, beginner-friendly way to earn extra money in your spare time.
     </div>
 
     <a class="cta-button" href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
@@ -155,37 +171,35 @@ ul {
     </div>
   </div>
 
-  <!-- RIGHT SIDE -->
-  <div class="right">
+  <!-- RIGHT MOCKUP -->
+  <div class="mockup">
 
-    <div class="card">
-      <div class="card-title">How it works</div>
-      <ul>
-        <li>Sign up for free</li>
-        <li>Answer simple surveys</li>
-        <li>Earn rewards</li>
-        <li>Cash out anytime</li>
-      </ul>
+    <div class="mock-header">
+      <div class="mock-box">
+        <div class="mock-title">Available Surveys</div>
+        <div class="mock-value">12</div>
+      </div>
+
+      <div class="mock-box">
+        <div class="mock-title">Today’s Earnings</div>
+        <div class="mock-value">$4.80</div>
+      </div>
     </div>
 
-    <div class="card">
-      <div class="card-title">My experience</div>
-      <p>
-        I’ve tried a few survey sites and most aren’t worth it. This one has been one of the more consistent ones for earning small amounts in spare time.
+    <div class="mock-box">
+      <div class="mock-title">Recent Surveys</div>
+
+      <div class="survey">📋 Shopping Habits — 5 min</div>
+      <div class="survey">📋 App Feedback — 3 min</div>
+      <div class="survey">📋 Daily Routine — 4 min</div>
+    </div>
+
+    <div class="mock-box">
+      <div class="mock-title">My experience</div>
+      <p style="font-size:14px; color:#94a3b8;">
+        I’ve tried multiple survey sites — this is one of the few that feels consistent for earning small amounts in spare time.
       </p>
     </div>
-
-    <div class="card">
-      <div class="card-title">What to expect</div>
-      <p>
-        This won’t make you rich, but it’s a simple way to earn a bit of extra money without needing any skills.
-      </p>
-    </div>
-
-    <!-- SECOND CTA -->
-    <a class="cta-button" href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
-      👉 Start Earning Now
-    </a>
 
   </div>
 
