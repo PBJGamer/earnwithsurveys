@@ -99,6 +99,30 @@ h1 {
   color: black;
 }
 
+  /* FINAL CTA SECTION */
+.final-cta {
+  margin-top: 30px;
+}
+
+.final-text {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+/* PC improvement */
+@media (min-width: 769px) {
+  .final-cta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .cta-secondary {
+    margin-top: 0;
+  }
+}
+
 /* MAIN */
 .main {
   display: flex;
@@ -226,9 +250,15 @@ h1 {
     <p>Not a full income, but a simple way to earn extra money.</p>
 
     <!-- SECOND CTA -->
-    <a class="cta-secondary" href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
-      Try It Free
-    </a>
+    <div class="final-cta">
+  <div class="final-text">
+    Ready to try it for yourself?
+  </div>
+
+  <a class="cta-secondary" href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
+    Try It Free
+  </a>
+</div>
 
   </div>
 
