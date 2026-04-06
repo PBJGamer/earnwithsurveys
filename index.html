@@ -1,292 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Survey Earnings</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #020617;
-  color: white;
+
+/* ADD THIS AT TOP (prevents overflow issues globally) */
+* {
+  box-sizing: border-box;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 80px 20px 50px;
-  animation: fadeIn 1s ease;
+  padding: 80px 20px 60px;
 }
 
-.badge {
-  display: inline-block;
-  background: rgba(34,197,94,0.1);
-  color: #22c55e;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  margin-bottom: 20px;
-}
-
-h1 {
-  font-size: 58px;
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.15;
-}
-
-.highlight {
-  color: #facc15;
-}
-
-.subtext {
-  color: #94a3b8;
-  font-size: 18px;
-  margin-top: 15px;
-  margin-bottom: 35px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* CTA BUTTON (UPGRADED) */
+/* FIX BUTTON */
 .cta-button {
   display: inline-block;
   background: linear-gradient(135deg, #fde047, #facc15);
   color: black;
-  padding: 18px 42px;
+  padding: 16px 32px;
   border-radius: 12px;
   font-weight: 700;
   text-decoration: none;
   font-size: 18px;
-  letter-spacing: 0.3px;
-  position: relative;
-  transition: all 0.25s ease;
-  box-shadow: 0 10px 30px rgba(250,204,21,0.35);
-}
-
-/* subtle glow pulse */
-.cta-button::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  background: rgba(250,204,21,0.25);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.cta-button:hover {
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 15px 40px rgba(250,204,21,0.5);
-}
-
-.cta-button:hover::after {
-  opacity: 1;
-}
-
-.cta-note {
-  font-size: 13px;
-  color: #64748b;
-  margin-top: 12px;
+  max-width: 100%;
 }
 
 /* MAIN */
 .main {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 60px;
-  padding: 40px 20px 80px;
+  padding: 40px 20px 100px;
   flex-wrap: wrap;
 }
 
 /* INFO */
 .info {
   max-width: 420px;
-  animation: fadeInUp 1s ease;
+  width: 100%;
 }
 
-.info h2 {
-  font-size: 20px;
-  margin-bottom: 8px;
-}
-
-.info p {
-  color: #94a3b8;
-  font-size: 15px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-/* MOCKUP */
+/* MOCKUP FIX */
 .mockup {
-  width: 420px;
-  background: #0f172a;
-  border-radius: 18px;
-  padding: 20px;
-  border: 1px solid rgba(255,255,255,0.06);
-  box-shadow: 0 25px 70px rgba(0,0,0,0.7);
-  animation: fadeInUp 1s ease;
+  width: 100%;
+  max-width: 420px;
 }
 
-/* MOCK HEADER */
-.mock-top {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-
-.stat {
-  background: #020617;
-  padding: 12px;
-  border-radius: 10px;
-  width: 48%;
-}
-
-.stat-title {
-  font-size: 12px;
-  color: #64748b;
-}
-
-.stat-value {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-/* SURVEYS */
-.survey {
-  background: #020617;
-  padding: 12px;
-  border-radius: 8px;
-  margin-top: 10px;
-  font-size: 14px;
-  display: flex;
-  justify-content: space-between;
-}
-
-/* TRUST */
+/* TRUST FIX */
 .trust {
   text-align: center;
   font-size: 13px;
   color: #64748b;
-  margin-top: 10px;
+  padding: 40px 20px 60px; /* THIS FIXES YOUR ISSUE */
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-  from {opacity:0;}
-  to {opacity:1;}
-}
-
-@keyframes fadeInUp {
-  from {opacity:0; transform: translateY(20px);}
-  to {opacity:1; transform: translateY(0);}
-}
-
-/* MOBILE */
+/* MOBILE FIXES */
 @media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
   h1 {
-    font-size: 38px;
+    font-size: 34px;
+  }
+
+  .subtext {
+    font-size: 16px;
   }
 
   .main {
     flex-direction: column;
-  }
-
-  .mockup {
-    width: 100%;
+    gap: 30px;
+    padding: 30px 16px 80px;
   }
 
   .cta-button {
     width: 100%;
-    text-align: center;
+    font-size: 16px;
+    padding: 16px;
   }
+
+  .mockup {
+    padding: 16px;
+  }
+
+  .stat {
+    width: 100%;
+  }
+
+  .mock-top {
+    flex-direction: column;
+    gap: 10px;
+  }
+
 }
 </style>
-</head>
-
-<body>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="badge">Free • No experience needed</div>
-
-  <h1>
-    Get Paid For <span class="highlight">Simple Surveys</span>
-  </h1>
-
-  <div class="subtext">
-    A straightforward way to earn a bit of extra money in your spare time.
-  </div>
-
-  <a class="cta-button" href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
-    Start Earning
-  </a>
-
-  <div class="cta-note">Takes less than 1 minute to get started</div>
-</div>
-
-<!-- MAIN -->
-<div class="main">
-
-  <div class="info">
-    <h2>How it works</h2>
-    <p>
-      Sign up for free, answer short surveys, and earn rewards. Cash out whenever you want.
-    </p>
-
-    <h2>My experience</h2>
-    <p>
-      I’ve tried a few survey platforms — most aren’t worth it. This one has been more consistent for small, easy earnings.
-    </p>
-
-    <h2>What to expect</h2>
-    <p>
-      It’s not a full income, but it’s a simple way to earn extra money without needing any skills.
-    </p>
-  </div>
-
-  <div class="mockup">
-
-    <div class="mock-top">
-      <div class="stat">
-        <div class="stat-title">Available</div>
-        <div class="stat-value">12 Surveys</div>
-      </div>
-
-      <div class="stat">
-        <div class="stat-title">Today</div>
-        <div class="stat-value">$4.80</div>
-      </div>
-    </div>
-
-    <div class="survey">
-      <span>Shopping habits</span>
-      <span>5 min</span>
-    </div>
-
-    <div class="survey">
-      <span>App feedback</span>
-      <span>3 min</span>
-    </div>
-
-    <div class="survey">
-      <span>Daily routine</span>
-      <span>4 min</span>
-    </div>
-
-  </div>
-
-</div>
-
-<div class="trust">
-  Free signup • Works worldwide • No payment required
-</div>
-
-</body>
-</html>
