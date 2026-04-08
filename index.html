@@ -42,14 +42,31 @@ h1 {
 }
 
 .highlight {
-@@ -63,24 +64,46 @@
+  color: #facc15;
+}
+
+.subtext {
+  color: #94a3b8;
+  font-size: 18px;
+  margin: 15px auto 30px;
+  max-width: 500px;
+}
+
+/* PRIMARY CTA */
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #fde047, #facc15);
+  color: black;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
   font-size: 18px;
   transition: all 0.25s ease;
   box-shadow: 0 10px 30px rgba(250,204,21,0.3);
   animation: pulse 2.5s infinite;
 }
 
-/* Pulse animation */
 .cta-button:hover {
   transform: translateY(-2px);
 }
@@ -61,8 +78,6 @@ h1 {
   100% { box-shadow: 0 0 0 0 rgba(250,204,21,0); }
 }
 
-.cta-button {
-  animation: pulse 2.5s infinite;
 /* PAYOUT STRIP */
 .payouts {
   display: flex;
@@ -72,8 +87,6 @@ h1 {
   margin-top: 25px;
 }
 
-.cta-button:hover {
-  transform: translateY(-2px);
 .payout-item {
   background: rgba(255,255,255,0.05);
   padding: 8px 14px;
@@ -83,7 +96,6 @@ h1 {
   border: 1px solid rgba(255,255,255,0.06);
 }
 
-/* SECOND CTA (different style) */
 /* MICRO TRUST */
 .micro-trust {
   font-size: 12px;
@@ -95,44 +107,50 @@ h1 {
 .cta-secondary {
   display: inline-block;
   background: transparent;
-@@ -90,7 +113,6 @@
+  border: 2px solid #facc15;
+  color: #facc15;
+  padding: 14px 30px;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
-  margin-top: 30px;
   transition: all 0.25s ease;
 }
 
-@@ -99,7 +121,7 @@
+.cta-secondary:hover {
+  background: #facc15;
   color: black;
 }
 
-  /* FINAL CTA SECTION */
 /* FINAL CTA */
 .final-cta {
   margin-top: 30px;
 }
-@@ -110,19 +132,6 @@
+
+.final-text {
+  font-size: 14px;
+  color: #94a3b8;
   margin-bottom: 10px;
-}
-
-/* PC improvement */
-@media (min-width: 769px) {
-  .final-cta {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .cta-secondary {
-    margin-top: 0;
-  }
 }
 
 /* MAIN */
 .main {
   display: flex;
-@@ -145,6 +154,7 @@
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 40px 20px 100px;
+  flex-wrap: wrap;
+}
+
+.info {
+  max-width: 420px;
+  width: 100%;
+}
+
+.info h2 {
+  margin-bottom: 8px;
+}
+
 .info p {
   color: #94a3b8;
   line-height: 1.6;
@@ -140,17 +158,41 @@ h1 {
 }
 
 /* MOCKUP */
-@@ -178,12 +188,25 @@
+.mockup {
+  width: 100%;
+  max-width: 420px;
+  background: #0f172a;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.mock-top {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.stat {
+  flex: 1;
+  background: #020617;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.survey {
+  background: #020617;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 8px;
+  display: flex;
   justify-content: space-between;
 }
 
-/* TRUST */
 /* TRUST FOOTER */
 .trust {
   text-align: center;
   font-size: 13px;
   color: #64748b;
-  padding: 40px 20px 60px;
   padding: 50px 20px 70px;
 }
 
@@ -168,7 +210,9 @@ h1 {
 }
 
 /* MOBILE */
-@@ -193,17 +216,17 @@
+@media (max-width: 768px) {
+
+  h1 {
     font-size: 34px;
   }
 
@@ -182,16 +226,34 @@ h1 {
     padding: 30px 16px 80px;
   }
 
-  .cta-button {
-    width: 100%;
-    text-align: center;
-  }
-
   .cta-button,
   .cta-secondary {
     width: 100%;
     text-align: center;
-@@ -234,6 +257,19 @@
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">Free • No experience needed</div>
+
+  <h1>
+    Get Paid For <span class="highlight">Simple Surveys</span>
+  </h1>
+
+  <div class="subtext">
+    A straightforward way to earn a bit of extra money in your spare time.
+  </div>
+
+  <a class="cta-button" href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
+    Start Earning
+  </a>
+
   <div style="font-size:13px; color:#64748b; margin-top:10px;">
     Takes less than 1 minute to get started
   </div>
@@ -211,19 +273,22 @@ h1 {
 </div>
 
 <!-- MAIN -->
-@@ -251,33 +287,31 @@
+<div class="main">
+
+  <div class="info">
+    <h2>How it works</h2>
+    <p>Sign up, answer surveys, and earn rewards. Cash out anytime.</p>
+
+    <h2>My experience</h2>
+    <p>This has been one of the more consistent survey platforms I’ve tried for small earnings.</p>
+
+    <h2>What to expect</h2>
+    <p>Not a full income, but a simple way to earn extra money.</p>
 
     <!-- SECOND CTA -->
     <div class="final-cta">
-  <div class="final-text">
-    Ready to try it for yourself?
-  </div>
       <div class="final-text">Ready to try it for yourself?</div>
 
-  <a class="cta-secondary" href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
-    Try It Free
-  </a>
-</div>
       <a class="cta-secondary" href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d" target="_blank">
         Try It Free
       </a>
