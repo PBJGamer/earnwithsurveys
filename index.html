@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,12 +6,9 @@
 
 <title>Simple Survey Earnings</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ==============================
-   BASE
-============================== */
 
 * {
   box-sizing: border-box;
@@ -30,276 +26,301 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  -webkit-tap-highlight-color: transparent;
+/* =========================
+   GLOBAL FADE
+========================= */
+
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-.container {
-  width: min(1100px, calc(100% - 32px));
-  margin: 0 auto;
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ==============================
+/* =========================
    HERO
-============================== */
+========================= */
 
 .hero {
   text-align: center;
-  padding: clamp(55px, 8vw, 80px) 16px 55px;
+  padding: clamp(60px, 8vw, 90px) 20px 60px;
 }
 
 .badge {
   display: inline-block;
   background: rgba(34,197,94,0.1);
   color: #22c55e;
-  padding: 6px 14px;
+  padding: 7px 15px;
   border-radius: 999px;
-  font-size: 13px;
-  margin-bottom: 20px;
-
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeUp 0.6s ease forwards;
+  font-size: 14px;
+  margin-bottom: 22px;
 }
+
+/* =========================
+   HEADLINE
+========================= */
 
 h1 {
-  font-size: clamp(36px, 6vw, 56px);
+  font-size: clamp(38px, 5vw, 58px);
   margin: 0;
-  line-height: 1.08;
-  letter-spacing: -1.5px;
-}
-
-.reveal {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeUp 0.6s ease forwards;
-}
-
-.reveal.delay1 {
-  animation-delay: 0.15s;
-}
-
-.reveal.delay2 {
-  animation-delay: 0.4s;
+  line-height: 1.1;
+  letter-spacing: -1px;
 }
 
 .highlight {
   color: #facc15;
 }
 
+/* =========================
+   SUBTEXT
+========================= */
+
 .subtext {
   color: #94a3b8;
-  font-size: clamp(16px, 2vw, 18px);
+  font-size: clamp(16px, 2vw, 19px);
   line-height: 1.6;
-  margin: 18px auto 28px;
-  max-width: 520px;
-
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeUp 0.6s ease forwards;
-  animation-delay: 0.65s;
+  margin: 18px auto 30px;
+  max-width: 560px;
 }
 
-/* ==============================
+/* =========================
    CTA
-============================== */
-
-.cta-button,
-.cta-secondary {
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease,
-    color 0.25s ease;
-}
+========================= */
 
 .cta-button {
   display: inline-block;
   background: linear-gradient(135deg, #fde047, #facc15);
-  color: #020617;
-  padding: 16px 32px;
+  color: black;
+  padding: 17px 34px;
   border-radius: 12px;
   font-weight: 700;
   text-decoration: none;
   font-size: 18px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 10px 30px rgba(250,204,21,0.3);
-
-  opacity: 0;
-  transform: translateY(10px);
-  animation:
-    fadeUp 0.6s ease forwards,
-    pulse 2.5s infinite;
-  animation-delay: 1s, 1.8s;
+  animation: pulse 2.5s infinite;
 }
 
 .cta-button:hover {
   transform: translateY(-2px);
 }
 
-.cta-note {
-  font-size: 13px;
-  color: #64748b;
-  margin-top: 10px;
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(250,204,21,0.4);
+  }
 
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards;
-  animation-delay: 1.25s;
+  70% {
+    box-shadow: 0 0 0 12px rgba(250,204,21,0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(250,204,21,0);
+  }
 }
 
-/* ==============================
-   PAYOUTS
-============================== */
+.cta-note {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 11px;
+}
+
+/* =========================
+   PAYOUT STRIP
+========================= */
 
 .payouts {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin-top: 24px;
-
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards;
-  animation-delay: 1.45s;
+  margin-top: 26px;
 }
 
 .payout-item {
   background: rgba(255,255,255,0.05);
-  padding: 8px 13px;
+  padding: 9px 15px;
   border-radius: 999px;
-  font-size: 13px;
+  font-size: 14px;
   color: #cbd5f5;
   border: 1px solid rgba(255,255,255,0.06);
 }
 
 .micro-trust {
-  font-size: 12px;
+  font-size: 13px;
   color: #64748b;
-  margin-top: 10px;
-
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards;
-  animation-delay: 1.65s;
+  margin-top: 11px;
 }
 
-/* ==============================
-   SHARED SECTIONS
-============================== */
-
-.section {
-  width: min(1000px, calc(100% - 32px));
-  margin: 0 auto;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 25px;
-  margin: 0 0 22px;
-}
-
-/* ==============================
+/* =========================
    HOW IT WORKS
-============================== */
+========================= */
+
+.how-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 20px 30px;
+  text-align: center;
+}
+
+.how-section h2 {
+  margin-bottom: 10px;
+}
+
+.how-intro {
+  color: #94a3b8;
+  font-size: 16px;
+  margin-bottom: 28px;
+}
 
 .steps {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-bottom: 55px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
 }
 
 .step {
   background: #0f172a;
   border: 1px solid rgba(255,255,255,0.05);
   border-radius: 14px;
-  padding: 18px;
+  padding: 20px;
 }
 
 .step-number {
-  display: inline-flex;
-  width: 28px;
-  height: 28px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(250,204,21,0.12);
   color: #facc15;
   font-size: 13px;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.step strong {
-  display: block;
-  margin-bottom: 5px;
+.step h3 {
+  margin: 0 0 8px;
+  font-size: 17px;
 }
 
-.step span {
+.step p {
   color: #94a3b8;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
+  margin: 0;
 }
 
-/* ==============================
+/* =========================
    MAIN
-============================== */
+========================= */
 
 .main {
-  display: grid;
-  grid-template-columns: minmax(0, 420px) minmax(280px, 420px);
+  display: flex;
   justify-content: center;
-  align-items: start;
-  gap: clamp(30px, 6vw, 60px);
-  padding: 0 0 80px;
+  align-items: flex-start;
+  gap: clamp(35px, 6vw, 70px);
+  padding: 50px 20px 90px;
+  flex-wrap: wrap;
+}
+
+.info {
+  max-width: 440px;
+  width: 100%;
 }
 
 .info h2 {
-  margin: 0 0 8px;
-  font-size: 21px;
+  margin-bottom: 8px;
+  font-size: 22px;
 }
 
 .info p {
   color: #94a3b8;
-  line-height: 1.6;
-  margin: 0 0 20px;
+  line-height: 1.65;
+  font-size: 16px;
+  margin-bottom: 23px;
 }
 
-/* ==============================
-   HONEST EXPECTATIONS
-============================== */
+/* =========================
+   EXAMPLE DASHBOARD
+========================= */
 
-.expectations {
-  margin: 10px 0 25px;
-  padding: 15px 16px;
-  border-left: 3px solid #facc15;
-  background: rgba(250,204,21,0.05);
-  border-radius: 0 10px 10px 0;
+.mockup {
+  width: 100%;
+  max-width: 440px;
+  background: #0f172a;
+  border-radius: 18px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
-.expectations strong {
-  display: block;
-  margin-bottom: 5px;
+.mock-label {
+  color: #64748b;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.mock-top {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.stat {
+  flex: 1;
+  background: #020617;
+  padding: 12px;
+  border-radius: 9px;
+}
+
+.stat-title {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 3px;
+}
+
+.stat-value {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.survey {
+  background: #020617;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 9px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.survey-name {
   font-size: 14px;
 }
 
-.expectations span {
+.survey-details {
+  text-align: right;
+  font-size: 12px;
   color: #94a3b8;
-  font-size: 13px;
   line-height: 1.5;
+  white-space: nowrap;
 }
 
-/* ==============================
-   SECOND CTA
-============================== */
+.reward {
+  color: #facc15;
+}
+
+/* =========================
+   FINAL CTA
+========================= */
 
 .final-cta {
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 .final-text {
-  font-size: 14px;
+  font-size: 15px;
   color: #94a3b8;
-  margin-bottom: 10px;
+  margin-bottom: 11px;
 }
 
 .cta-secondary {
@@ -311,147 +332,82 @@ h1 {
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
+  font-size: 16px;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
 }
 
 .cta-secondary:hover {
   background: #facc15;
-  color: #020617;
+  color: black;
   transform: translateY(-2px);
 }
 
-/* ==============================
-   MOCKUP
-============================== */
+/* =========================
+   PRIME OPINION INFO
+========================= */
 
-.mockup {
-  width: 100%;
-  background: #0f172a;
-  border-radius: 18px;
-  padding: 20px;
-  border: 1px solid rgba(255,255,255,0.05);
-}
-
-.mock-label {
-  color: #64748b;
-  font-size: 11px;
+.about-box {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  padding: 25px 20px;
   text-align: center;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
 }
 
-.mock-top {
-  display: flex;
-  gap: 10px;
+.about-box h2 {
+  font-size: 21px;
   margin-bottom: 10px;
 }
 
-.stat {
-  flex: 1;
-  min-width: 0;
-  background: #020617;
-  padding: 11px;
-  border-radius: 8px;
+.about-box p {
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto 16px;
+}
+
+.about-link {
+  display: inline-block;
+  color: #facc15;
+  text-decoration: none;
   font-size: 14px;
-  text-align: center;
+  font-weight: 600;
 }
 
-.survey {
-  background: #020617;
-  padding: 11px;
-  border-radius: 6px;
-  margin-top: 8px;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  color: #e2e8f0;
-  font-size: 13px;
-}
-
-.survey span:last-child {
-  color: #64748b;
-  white-space: nowrap;
-}
-
-/* ==============================
-   FOOTER
-============================== */
-
-.trust {
-  text-align: center;
-  font-size: 12px;
-  color: #64748b;
-  padding: 45px 16px 60px;
-  border-top: 1px solid rgba(255,255,255,0.04);
-}
-
-.footer-links {
-  margin-top: 10px;
-}
-
-.footer-links a {
-  color: #64748b;
+.about-link:hover {
   text-decoration: underline;
 }
 
-.disclosure {
-  max-width: 650px;
-  margin: 12px auto 0;
-  font-size: 11px;
-  line-height: 1.5;
-  color: #475569;
+/* =========================
+   FOOTER
+========================= */
+
+.trust {
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+  padding: 45px 20px 65px;
 }
 
-/* ==============================
-   ANIMATIONS
-============================== */
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(250,204,21,0.4);
-  }
-  70% {
-    box-shadow: 0 0 0 12px rgba(250,204,21,0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(250,204,21,0);
-  }
-}
-
-/* ==============================
+/* =========================
    RESPONSIVE
-============================== */
+========================= */
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
 
   .steps {
     grid-template-columns: 1fr;
   }
 
   .main {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .info,
-  .mockup {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 35px;
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 768px) {
 
   .hero {
-    padding-top: 50px;
+    padding: 55px 16px 45px;
   }
 
   .cta-button,
@@ -461,28 +417,48 @@ h1 {
   }
 
   .payout-item {
-    font-size: 12px;
-    padding: 7px 11px;
-  }
-
-  .mockup {
-    padding: 15px;
-  }
-
-  .stat {
     font-size: 13px;
   }
 
+  .main {
+    flex-direction: column;
+    padding: 35px 16px 70px;
+  }
+
+  .info,
+  .mockup {
+    max-width: 100%;
+  }
+
   .survey {
-    font-size: 12px;
+    align-items: flex-start;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (max-width: 480px) {
 
-  html {
-    scroll-behavior: auto;
+  h1 {
+    font-size: 36px;
   }
+
+  .subtext {
+    font-size: 16px;
+  }
+
+  .mock-top {
+    flex-direction: column;
+  }
+
+  .survey-details {
+    font-size: 11px;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
 
   *,
   *::before,
@@ -490,179 +466,268 @@ h1 {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
-</style>
 
+</style>
 </head>
 
 <body>
 
 <!-- HERO -->
 
-<section class="hero">
+<div class="hero fade">
 
-  <div class="badge">Free • No experience needed</div>
+  <div class="badge">
+    Free • No experience needed
+  </div>
 
   <h1>
-    <span class="reveal delay1">Get Paid For</span><br>
-    <span class="reveal delay2 highlight">Simple Surveys</span>
+    Get Paid For <span class="highlight">Simple Surveys</span>
   </h1>
 
   <div class="subtext">
     A straightforward way to earn a bit of extra money in your spare time.
   </div>
 
-<a class="cta-button"
-  href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d"
-  target="_blank"
-  rel="noopener noreferrer">
-Start Earning </a>
+  <a
+    class="cta-button"
+    href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Start Earning
+  </a>
 
   <div class="cta-note">
-    Free to join • Choose the surveys you want to take
+    Takes less than 1 minute to get started
   </div>
 
   <div class="payouts">
-    <div class="payout-item">💸 PayPal</div>
-    <div class="payout-item">🏦 Cash</div>
+
+    <div class="payout-item">💸 Cash</div>
     <div class="payout-item">🎁 Gift Cards</div>
-    <div class="payout-item">💳 More Rewards</div>
+    <div class="payout-item">💳 PayPal</div>
+
   </div>
 
   <div class="micro-trust">
-    Rewards and survey availability vary by user
+    Choose the reward that suits you
   </div>
 
-</section>
+</div>
+
 
 <!-- HOW IT WORKS -->
 
-<section class="section">
+<div class="how-section fade">
 
-  <h2 class="section-title">How it works</h2>
+  <h2>How it works</h2>
+
+  <div class="how-intro">
+    A simple three-step process.
+  </div>
 
   <div class="steps">
 
-```
-<div class="step">
-  <div class="step-number">1</div>
-  <strong>Sign up</strong>
-  <span>Create your free Prime Opinion account.</span>
-</div>
+    <div class="step">
+      <div class="step-number">01</div>
+      <h3>Sign up</h3>
+      <p>Create your free account and get started.</p>
+    </div>
 
-<div class="step">
-  <div class="step-number">2</div>
-  <strong>Take surveys</strong>
-  <span>Choose from the surveys available to you.</span>
-</div>
+    <div class="step">
+      <div class="step-number">02</div>
+      <h3>Take surveys</h3>
+      <p>Choose surveys that interest you and answer the questions.</p>
+    </div>
 
-<div class="step">
-  <div class="step-number">3</div>
-  <strong>Earn rewards</strong>
-  <span>Complete surveys and redeem your rewards.</span>
-</div>
-```
+    <div class="step">
+      <div class="step-number">03</div>
+      <h3>Get rewarded</h3>
+      <p>Complete surveys and redeem your points for available rewards.</p>
+    </div>
 
   </div>
 
-</section>
+</div>
+
 
 <!-- MAIN -->
 
-<section class="main section">
+<div class="main fade">
 
   <div class="info">
 
-```
-<h2>What you'll do</h2>
-<p>
-  Answer simple questions about things like shopping, products,
-  entertainment and everyday life.
-</p>
+    <h2>My experience</h2>
 
-<h2>What to expect</h2>
-<p>
-  Survey availability and rewards vary, so think of it as a way
-  to earn a little extra in your spare time rather than a full income.
-</p>
+    <p>
+      This has been one of the more consistent survey platforms I've tried for small earnings.
+    </p>
 
-<div class="expectations">
-  <strong>A quick heads-up</strong>
-  <span>
-    Not every survey will be available to everyone. Your profile
-    determines which surveys you can access.
-  </span>
-</div>
+    <h2>What to expect</h2>
 
-<div class="final-cta">
-  <div class="final-text">Want to see what's available?</div>
+    <p>
+      Survey availability and rewards vary, so it's best viewed as a simple way to earn a little extra in your spare time.
+    </p>
 
-  <a class="cta-secondary"
-     href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d"
-     target="_blank"
-     rel="noopener noreferrer">
-    Try It Free
-  </a>
-</div>
-```
+    <div class="final-cta">
+
+      <div class="final-text">
+        Want to give it a try?
+      </div>
+
+      <a
+        class="cta-secondary"
+        href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Try It Free
+      </a>
+
+    </div>
 
   </div>
+
+
+  <!-- EXAMPLE SURVEY DASHBOARD -->
 
   <div class="mockup">
 
-```
-<div class="mock-label">Example surveys</div>
+    <div class="mock-label">
+      Example survey dashboard
+    </div>
 
-<div class="mock-top">
-  <div class="stat">Surveys Available</div>
-  <div class="stat">Rewards</div>
-</div>
+    <div class="mock-top">
 
-<div class="survey">
-  <span>Shopping habits</span>
-  <span>5 min</span>
-</div>
+      <div class="stat">
 
-<div class="survey">
-  <span>App feedback</span>
-  <span>3 min</span>
-</div>
+        <div class="stat-title">
+          Available
+        </div>
 
-<div class="survey">
-  <span>Daily routine</span>
-  <span>4 min</span>
-</div>
+        <div class="stat-value">
+          Several surveys
+        </div>
 
-<div class="mock-label" style="margin-top:12px;margin-bottom:0;">
-  Example only — actual surveys vary
-</div>
-```
+      </div>
+
+      <div class="stat">
+
+        <div class="stat-title">
+          Rewards
+        </div>
+
+        <div class="stat-value">
+          Points
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="survey">
+
+      <span class="survey-name">
+        Shopping habits
+      </span>
+
+      <span class="survey-details">
+        <span class="reward">Example reward: varies</span><br>
+        ~5 min
+      </span>
+
+    </div>
+
+    <div class="survey">
+
+      <span class="survey-name">
+        App feedback
+      </span>
+
+      <span class="survey-details">
+        <span class="reward">Example reward: varies</span><br>
+        ~3 min
+      </span>
+
+    </div>
+
+    <div class="survey">
+
+      <span class="survey-name">
+        Daily routine
+      </span>
+
+      <span class="survey-details">
+        <span class="reward">Example reward: varies</span><br>
+        ~4 min
+      </span>
+
+    </div>
 
   </div>
 
-</section>
+</div>
+
+
+<!-- PRIME OPINION INFO -->
+
+<div class="about-box fade">
+
+  <h2>What is Prime Opinion?</h2>
+
+  <p>
+    Prime Opinion is a survey platform where members answer questions for points that can be redeemed for available rewards such as cash and gift cards.
+  </p>
+
+  <a
+    class="about-link"
+    href="https://primeopinion.com.au/register?ref=9b1035f1-7d09-4d5e-954b-849d59dbea6d"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Learn more &amp; get started →
+  </a>
+
+</div>
+
 
 <!-- FOOTER -->
 
-<footer class="trust">
+<div class="trust fade">
+  Free signup • Survey availability varies • Rewards vary
+</div>
 
-Free signup • Survey availability varies • Rewards available
 
-  <div class="footer-links">
-    <a href="https://www.primeopinion.com.au/en-au/about"
-       target="_blank"
-       rel="noopener noreferrer">
-      Learn more about Prime Opinion
-    </a>
-  </div>
+<script>
 
-  <div class="disclosure">
-    Disclosure: This page contains a referral link. If you sign up through
-    this link, the page owner may receive a referral benefit.
-  </div>
+const faders = document.querySelectorAll('.fade');
 
-</footer>
+const appearOptions = {
+  threshold: 0.15
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+
+  entries.forEach(entry => {
+
+    if (!entry.isIntersecting) return;
+
+    entry.target.classList.add('show');
+
+    observer.unobserve(entry.target);
+
+  });
+
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
+
+</script>
 
 </body>
 </html>
