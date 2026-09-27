@@ -265,63 +265,122 @@ h1 {
 
 
 /* =========================================================
-   EXAMPLE SURVEY DASHBOARD
+   EXAMPLE SURVEY PREVIEW
 ========================================================= */
 
 .mockup {
   width: 100%;
+  max-width: 440px;
   background: #0f172a;
-  border: 1px solid rgba(255,255,255,0.06);
   border-radius: 18px;
-  padding: 21px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  padding: clamp(18px, 2.5vw, 22px);
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 15px 45px rgba(0,0,0,0.2);
 }
 
-.mockup-header {
-  margin-bottom: 16px;
+
+/* MOCKUP TITLE */
+
+.mock-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
-.mockup-title {
-  font-size: 17px;
+.mock-label {
+  font-size: 15px;
+  color: #f8fafc;
   font-weight: 600;
-  margin-bottom: 4px;
 }
 
-.mockup-note {
-  font-size: 12px;
-  color: #64748b;
+.mock-badge {
+  font-size: 11px;
+  color: #34d399;
+  background: rgba(52,211,153,0.08);
+  border: 1px solid rgba(52,211,153,0.15);
+  padding: 5px 8px;
+  border-radius: 999px;
 }
+
+
+/* COLUMN HEADERS */
+
+.mock-top {
+  display: grid;
+  grid-template-columns: 1fr 115px;
+  gap: 10px;
+  margin-bottom: 8px;
+  padding: 0 12px;
+}
+
+.stat {
+  color: #64748b;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+
+/* SURVEY ROW */
 
 .survey {
   background: #020617;
-  border: 1px solid rgba(255,255,255,0.04);
-  padding: 14px;
-  border-radius: 10px;
-  margin-top: 9px;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 7px;
 
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
-  align-items: center;
+  grid-template-columns: 1fr auto;
   gap: 12px;
+  align-items: center;
+
+  font-size: 14px;
+
+  border: 1px solid rgba(255,255,255,0.025);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.survey:hover {
+  transform: translateY(-1px);
+  border-color: rgba(52,211,153,0.12);
 }
 
 .survey-name {
-  font-size: 14px;
   color: #e2e8f0;
-  min-width: 0;
+  font-weight: 500;
 }
 
-.survey-time {
-  font-size: 12px;
-  color: #64748b;
+.survey-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
   white-space: nowrap;
 }
 
-.survey-reward {
-  font-size: 13px;
+.reward {
+  color: #34d399;
   font-weight: 600;
-  color: #22c55e;
-  white-space: nowrap;
+  font-size: 13px;
+}
+
+.time {
+  color: #64748b;
+  font-size: 11px;
+}
+
+
+/* MOCKUP DISCLAIMER */
+
+.mock-note {
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.5;
+  margin-top: 13px;
 }
 
 
@@ -390,6 +449,10 @@ h1 {
     padding-top: 25px;
   }
 
+  .mockup {
+    max-width: 600px;
+  }
+
 }
 
 @media (max-width: 600px) {
@@ -424,19 +487,12 @@ h1 {
     padding-right: 16px;
   }
 
+  .mock-top {
+    grid-template-columns: 1fr 100px;
+  }
+
   .survey {
-    grid-template-columns: 1fr auto;
-    gap: 6px 10px;
-  }
-
-  .survey-time {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .survey-reward {
-    grid-column: 1;
-    grid-row: 2;
+    padding: 11px;
   }
 
 }
@@ -457,6 +513,24 @@ h1 {
 
   .mockup {
     padding: 15px;
+  }
+
+  .mock-top {
+    grid-template-columns: 1fr 90px;
+  }
+
+  .survey {
+    grid-template-columns: 1fr auto;
+    gap: 7px;
+    font-size: 13px;
+  }
+
+  .reward {
+    font-size: 12px;
+  }
+
+  .time {
+    font-size: 10px;
   }
 
 }
@@ -480,6 +554,10 @@ h1 {
 
   .cta-button {
     animation: none;
+  }
+
+  .survey {
+    transition: none;
   }
 
 }
@@ -648,22 +726,36 @@ h1 {
 
 
   <!-- =====================================================
-       UPDATED EXAMPLE SURVEYS
+       EXAMPLE SURVEY PREVIEW — SAME AS SITE 2
   ====================================================== -->
 
   <div class="mockup">
 
-    <div class="mockup-header">
+    <div class="mock-header">
 
-      <div class="mockup-title">
+      <div class="mock-label">
         Example surveys
       </div>
 
-      <div class="mockup-note">
-        Illustrative examples — availability and rewards vary.
+      <div class="mock-badge">
+        Sample
       </div>
 
     </div>
+
+
+    <div class="mock-top">
+
+      <div class="stat">
+        Survey
+      </div>
+
+      <div class="stat">
+        Reward / time
+      </div>
+
+    </div>
+
 
     <div class="survey">
 
@@ -671,15 +763,20 @@ h1 {
         Shopping habits
       </span>
 
-      <span class="survey-time">
-        5 min
-      </span>
+      <span class="survey-details">
 
-      <span class="survey-reward">
-        Example: $1.50
+        <span class="reward">
+          ~$1.20
+        </span>
+
+        <span class="time">
+          ~5 min
+        </span>
+
       </span>
 
     </div>
+
 
     <div class="survey">
 
@@ -687,15 +784,20 @@ h1 {
         App feedback
       </span>
 
-      <span class="survey-time">
-        3 min
-      </span>
+      <span class="survey-details">
 
-      <span class="survey-reward">
-        Example: $1.10
+        <span class="reward">
+          ~$0.90
+        </span>
+
+        <span class="time">
+          ~3 min
+        </span>
+
       </span>
 
     </div>
+
 
     <div class="survey">
 
@@ -703,13 +805,46 @@ h1 {
         Daily routine
       </span>
 
-      <span class="survey-time">
-        4 min
+      <span class="survey-details">
+
+        <span class="reward">
+          ~$1.00
+        </span>
+
+        <span class="time">
+          ~4 min
+        </span>
+
       </span>
 
-      <span class="survey-reward">
-        Example: $1.75
+    </div>
+
+
+    <div class="survey">
+
+      <span class="survey-name">
+        Entertainment
       </span>
+
+      <span class="survey-details">
+
+        <span class="reward">
+          ~$1.50
+        </span>
+
+        <span class="time">
+          ~6 min
+        </span>
+
+      </span>
+
+    </div>
+
+
+    <div class="mock-note">
+
+      Example layout only — actual surveys,
+      availability and rewards vary.
 
     </div>
 
